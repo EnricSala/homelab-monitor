@@ -1,0 +1,87 @@
+smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.10.0-514.6.1.el7.x86_64] (local build)
+Copyright (C) 2002-13, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     SandForce Driven SSDs
+Device Model:     SanDisk SNDSK240G
+Serial Number:    SNDSK-123456789
+LU WWN Device Id: 1 234b56 7a897
+Firmware Version: Z123456789L
+User Capacity:    240,057,409,536 bytes [240 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ACS-2 123/456 revision 7
+SATA Version is:  SATA >3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Sat Feb 11 18:15:53 2017 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x11) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  10) minutes.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  5 Retired_Block_Count     0x0032   100   100   000    Old_age   Always       -       0
+  9 Power_On_Hours_and_Msec 0x0032   000   100   000    Old_age   Always       -       277h+00m+00.000s
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       24
+165 Unknown_Attribute       0x0032   100   100   000    Old_age   Always       -       171804065870
+166 Unknown_Attribute       0x0032   100   100   000    Old_age   Always       -       0
+167 Unknown_Attribute       0x0032   100   100   000    Old_age   Always       -       0
+168 Unknown_Attribute       0x0032   100   100   000    Old_age   Always       -       1
+169 Unknown_Attribute       0x0032   100   100   000    Old_age   Always       -       0
+170 Reserve_Block_Count     0x0032   100   100   000    Old_age   Always       -       0
+171 Program_Fail_Count      0x0032   100   100   000    Old_age   Always       -       0
+172 Erase_Fail_Count        0x0032   100   100   000    Old_age   Always       -       0
+173 Unknown_SandForce_Attr  0x0032   100   100   000    Old_age   Always       -       0
+174 Unexpect_Power_Loss_Ct  0x0032   100   100   000    Old_age   Always       -       11
+187 Reported_Uncorrect      0x0032   100   100   000    Old_age   Always       -       0
+188 Command_Timeout         0x0032   100   100   000    Old_age   Always       -       0
+194 Temperature_Celsius     0x0022   068   052   000    Old_age   Always       -       32 (0 48 0 0 0)
+199 SATA_CRC_Error_Count    0x0032   100   100   000    Old_age   Always       -       0
+230 Life_Curve_Status       0x0032   100   100   000    Old_age   Always       -       111669674010
+232 Available_Reservd_Space 0x0033   100   100   004    Pre-fail  Always       -       100
+233 SandForce_Internal      0x0032   100   100   000    Old_age   Always       -       143
+234 SandForce_Internal      0x0032   100   100   000    Old_age   Always       -       738
+241 Lifetime_Writes_GiB     0x0030   253   253   000    Old_age   Offline      -       348
+242 Lifetime_Reads_GiB      0x0030   253   253   000    Old_age   Offline      -       279
+244 Unknown_Attribute       0x0032   000   100   000    Old_age   Always       -       0
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%       117         -
+
+Selective Self-tests/Logging not supported
+
