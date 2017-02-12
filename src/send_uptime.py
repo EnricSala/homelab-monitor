@@ -1,4 +1,5 @@
 import re
+import command_executor as executor
 from repository import save_snapshot
 
 CPU_THREAD_COUNT = 8
@@ -24,8 +25,9 @@ def parse_uptime(string):
     return [uptime, users] + loads
 
 
-with open('../samples/uptime_v1.txt', 'r') as myfile:
-    stdin = myfile.read()
+# Call command
+out, err = executor.call('/usr/bin/uptime')
 
-points = parse_uptime(stdin)
-save_snapshot(points, test=True)
+# Parse and save values
+points = parse_uptime(out)
+save_snapshot(points, test=False)

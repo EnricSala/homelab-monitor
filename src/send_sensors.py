@@ -1,7 +1,8 @@
 import re
+import command_executor as executor
 from repository import save_snapshot
 
-devices = [
+DEVICES = [
     ('acpitz-virtual-0', [
         ('temp1', 'motherboard.sensor1.temperature'),
         ('temp2', 'motherboard.sensor2.temperature')
@@ -47,8 +48,9 @@ def parse_attrs(string, attrs):
     return sensors
 
 
-with open('../samples/sensors.txt', 'r') as myfile:
-    stdin = myfile.read()
+# Call command
+out, err = executor.call('/usr/bin/sensors')
 
-points = parse_sensors(devices, stdin)
-save_snapshot(points, test=True)
+# Parse and save values
+points = parse_sensors(DEVICES, out)
+save_snapshot(points, test=False)

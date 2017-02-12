@@ -1,5 +1,8 @@
 import re
+import command_executor as executor
 from repository import save_snapshot
+
+DEVICES = ['sda', 'sdb', 'sdc']
 
 
 def parse_smart(device, string):
@@ -22,9 +25,12 @@ def parse_smart(device, string):
     return attrs
 
 
-dev = 'sda'
-with open('../samples/smart_{}.txt'.format(dev), 'r') as myfile:
-    stdin = myfile.read()
+# Get S.M.A.R.T. for each device
+for dev in DEVICES:
+    # Call command
+    cmd = '/usr/sbin/smartctl -a -d ata /dev/{}'.format(dev)
+    out, err = executor.call(cmd)
 
-points = parse_smart(dev, stdin)
-save_snapshot(points, test=True)
+    # Parse and save values
+    points = parse_smart(dev, out)
+    save_snapshot(points, test=False)
