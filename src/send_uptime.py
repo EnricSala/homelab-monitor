@@ -1,6 +1,6 @@
 import re
 import command_executor as executor
-from repository import save_snapshot
+import influxdb_repository as repository
 
 CPU_THREAD_COUNT = 8
 
@@ -30,4 +30,4 @@ out, err = executor.call('/usr/bin/uptime')
 
 # Parse and save values
 points = parse_uptime(out)
-save_snapshot(points, test=False)
+repository.save_snapshot(points, test=False)

@@ -1,6 +1,6 @@
 import re
 import command_executor as executor
-from repository import save_snapshot
+import influxdb_repository as repository
 
 DEVICES = ['sda', 'sdb', 'sdc']
 
@@ -33,4 +33,4 @@ for dev in DEVICES:
 
     # Parse and save values
     points = parse_smart(dev, out)
-    save_snapshot(points, test=False)
+    repository.save_snapshot(points, test=False)

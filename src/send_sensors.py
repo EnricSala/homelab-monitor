@@ -1,6 +1,6 @@
 import re
 import command_executor as executor
-from repository import save_snapshot
+import influxdb_repository as repository
 
 DEVICES = [
     ('acpitz-virtual-0', [
@@ -53,4 +53,4 @@ out, err = executor.call('/usr/bin/sensors')
 
 # Parse and save values
 points = parse_sensors(DEVICES, out)
-save_snapshot(points, test=False)
+repository.save_snapshot(points, test=False)
